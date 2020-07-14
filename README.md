@@ -31,3 +31,22 @@ To start Amazon SQS locally
 ## Simple build for production
 
     $ yarn build
+    
+## Sending Message from the client side
+
+```javascript
+// Set same configuration for aws and squiess as in src/App.ts
+
+    const messageToSend = {
+      name: 'messageName',
+      message: {
+        email: "email@email.com",
+        from: "USD",
+        to: "EUR",
+      },
+    };
+
+    squiss.sendMessage(messageToSend);
+
+```
+ 
