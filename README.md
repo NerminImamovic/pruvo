@@ -35,18 +35,30 @@ To start Amazon SQS locally
 ## Sending Message from the client side
 
 ```javascript
-// Set same configuration for aws and squiess as in src/App.ts
+    ```javascript
 
-    const messageToSend = {
-      name: 'messageName',
-      message: {
-        email: "email@email.com",
-        from: "USD",
-        to: "EUR",
-      },
+    const awsConfig = {
+        accessKeyId: `dummy`,
+        secretAccessKey: `dummfy`,
+        region: `dummy`,
+        endpoint: `${URL_SQS_QUEUE}:${SQS_PORT}`,
     };
 
-    squiss.sendMessage(messageToSend);
+    const squiss = new Squiss({
+        awsConfig,
+        queueName: `default`,
+        bodyFormat: `json`,
+    });
 
+    const messageToSend = {
+      name: `messageName`,
+      message: {
+        email: `email@email.com`,
+        from: `BAM`,
+        to: `EUR`,
+      },
+    };
+    squiss.sendMessage(messageToSend);
+    ```
 ```
  
