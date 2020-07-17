@@ -35,8 +35,6 @@ To start Amazon SQS locally
 ## Sending Message from the client side
 
 ```javascript
-    ```javascript
-
     const awsConfig = {
         accessKeyId: `dummy`,
         secretAccessKey: `dummfy`,
@@ -59,6 +57,5 @@ To start Amazon SQS locally
       },
     };
     squiss.sendMessage(messageToSend);
-    ```
 ```
  
